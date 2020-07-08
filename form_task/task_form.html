@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form_Task</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="table_form.js"></script>
+
+    <style>
+        .container {
+            /* margin-bottom: 100px;*/
+           padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="container col-md-6">
+            <h2>Form_Task</h2>
+            <form id="myForm">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputName">Name</label>
+                        <input type="text" class="form-control" id="inputName" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Enter Email">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputAge">Age</label>
+                        <input type="number" class="form-control" id="inputAge" placeholder="Enter Age">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputDoB">Date of Birth</label>
+                        <input type="date" class="form-control" id="inputDoB">
+                    </div>
+                </div>
+                <div class="form-row">
+                        <div class="form-group col-md-4">
+                                <label for="inputCountry">Country</label>
+                                <select id="inputCountry" class="form-control" onchange="myFunc()">
+                                    <option selected>select</option>  
+                            </select>
+                        </div>
+                    
+                    <div class="form-group col-md-4">
+                        <label for="inputCity">City</label>
+                        <select id="inputCity" class="form-control" >
+                        <option selected>select</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                            <label for="inputState">State</label>
+                            <select id="inputState" class="form-control">
+                                <option selected>select</option>
+                                <option value="val1">Tamil Nadu</option>
+                                <option value="val2">Kerala</option>
+                                <option value="val2">others</option>
+                            </select>
+                    </div>
+                    
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <div>
+                            <label for="inputGender">Gender</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline1">Male</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline2">Female</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline3">Others</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <div>
+                            <label for="inputGender">Favourite Colour</label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" value="1">Violet
+                        </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" value="2">Purple
+                        </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" value="3">Grey
+                        </label>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="exampleFormControlTextarea1">Message</label>
+                        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" placeholder="Your Feedback" rows="3"></textarea>
+                    </div>
+                </div>
+                <button type="button" value="Submit" class="btn btn-primary" onclick="tableFunc()">Submit</button>
+                <button type="reset"value="Reset" class="btn btn-secondary">Reset</button>
+            </form>
+        </div>
+
+        <div class="container col-md-6">
+            <h2>Table View</h2>
+            <table class="table table-bordered" id="myTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+            const url = "https://restcountries.eu/rest/v2/all"
+            let i = 0
+            fetch(url)
+            .then((response)=> response.json())
+            .then((data)=> {
+                data.forEach((value)=> {
+                   // console.log(value["name"])
+                    let option = document.createElement("option")
+                    option.text = value["name"]
+                    option.value = `val${i++}`
+                    var select = document.getElementById("inputCountry")
+                    select.appendChild(option)
+                })
+            })
+            function myFunc() {
+                var select = document.getElementById("inputCountry")
+                var selectedText = select.options[select.selectedIndex].text
+                
+                fetch(url)
+                .then((resp)=> resp.json())
+                .then((data)=> {
+    
+                    data.forEach((value) => {
+                        if(value["name"] === selectedText){
+                            let option = document.createElement("option")
+                            option.text = value["capital"]
+                            var select = document.getElementById("inputCity")
+                            var child = select.lastElementChild
+                            while(child){
+                                select.removeChild(child)
+                                child = select.lastElementChild
+                            }
+                            select.appendChild(option)
+                           // console.log(option)
+                        }
+                    })
+    
+                })
+                
+            }
+            
+            
+        </script>
+
+</body>
+
+</html>
